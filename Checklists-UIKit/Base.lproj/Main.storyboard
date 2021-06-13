@@ -50,7 +50,6 @@
                     <navigationItem key="navigationItem" title="Checklists" id="aVs-Be-ITb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ea9-l3-JNK">
                             <connections>
-                                <action selector="addItem" destination="bzA-pN-4w8" id="kzj-Z3-tkb"/>
                                 <segue destination="GEG-HJ-gzP" kind="show" id="kh6-bC-GIE"/>
                             </connections>
                         </barButtonItem>
@@ -61,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="256.875" y="65.492957746478879"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add Item-->
         <scene sceneID="XhX-UX-kAA">
             <objects>
                 <tableViewController id="GEG-HJ-gzP" sceneMemberID="viewController">
@@ -84,11 +83,14 @@
                             <outlet property="delegate" destination="GEG-HJ-gzP" id="GCO-pJ-ycd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7j0-3W-ftL"/>
+                    <navigationItem key="navigationItem" title="Add Item" id="7j0-3W-ftL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="w1x-Go-bIH"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Olc-sq-Jhq"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmr-Wb-c9z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="48"/>
+            <point key="canvasLocation" x="1181" y="65"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vqi-Wx-oJ5">
