@@ -44,7 +44,13 @@
                             <outlet property="delegate" destination="bzA-pN-4w8" id="hT9-5r-yGE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Checklists" id="aVs-Be-ITb"/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="XfF-Pa-dSU"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Checklists" id="aVs-Be-ITb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ea9-l3-JNK"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DMB-Pe-uWk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
