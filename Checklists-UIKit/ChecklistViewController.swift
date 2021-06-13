@@ -9,21 +9,28 @@ import UIKit
 
 class ChecklistViewController: UITableViewController {
     
-    let row0text = "Walk the dog"
-    let row1text = "Brush my teeth"
-    let row2text = "Learn iOS development"
-    let row3text = "Soccer practice"
-    let row4text = "Eat ice cream"
+    let row0item = ChecklistItem()
+    let row1item = ChecklistItem()
+    let row2item = ChecklistItem()
+    let row3item = ChecklistItem()
+    let row4item = ChecklistItem()
     
-    var row0checked = false
-    var row1checked = true
-    var row2checked = true
-    var row3checked = false
-    var row4checked = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        row0item.text = "Walk the dog"
+        
+        row1item.text = "Brush my teeth"
+        row1item.checked = true
+        
+        row2item.text = "Learn iOS development"
+        row2item.checked = true
+        
+        row3item.text = "Soccer practice"
+        
+        row4item.text = "Eat ice cream"
+        row4item.checked = true
     }
 
 // MARK: - Table View Data Source
@@ -44,15 +51,15 @@ class ChecklistViewController: UITableViewController {
         let label = cell.viewWithTag(1000) as! UILabel
         
         if indexPath.row  == 0 {
-            label.text = row0text
+            label.text = row0item.text
         } else if indexPath.row  == 1 {
-            label.text = row1text
+            label.text = row1item.text
         } else if indexPath.row  == 2 {
-            label.text = row2text
+            label.text = row2item.text
         } else if indexPath.row  == 3 {
-            label.text = row3text
+            label.text = row3item.text
         } else if indexPath.row  == 4 {
-            label.text = row4text
+            label.text = row4item.text
         }
         
         configureCheckmark(for: cell, at: indexPath)
@@ -67,15 +74,15 @@ class ChecklistViewController: UITableViewController {
             
             
             if indexPath.row == 0 {
-                row0checked.toggle()
+                row0item.checked.toggle()
             } else if indexPath.row == 1 {
-                row0checked.toggle()
+                row1item.checked.toggle()
             } else if indexPath.row == 2 {
-                row0checked.toggle()
+                row2item.checked.toggle()
             } else if indexPath.row == 3 {
-                row0checked.toggle()
+                row3item.checked.toggle()
             } else if indexPath.row == 4 {
-                row0checked.toggle()
+                row4item.checked.toggle()
             }
             
             configureCheckmark(for: cell, at: indexPath)
@@ -87,15 +94,15 @@ class ChecklistViewController: UITableViewController {
         var isChecked = false
          
         if indexPath.row == 0 {
-            isChecked = row0checked
+            isChecked = row0item.checked
         } else if indexPath.row == 1 {
-            isChecked = row1checked
+            isChecked = row1item.checked
         } else if indexPath.row == 2 {
-            isChecked = row2checked
+            isChecked = row2item.checked
         } else if indexPath.row == 3 {
-            isChecked = row3checked
+            isChecked = row3item.checked
         } else if indexPath.row == 4 {
-            isChecked = row4checked
+            isChecked = row4item.checked
         }
         
         if isChecked {
