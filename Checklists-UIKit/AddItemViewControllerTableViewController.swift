@@ -9,6 +9,8 @@ import UIKit
 
 class AddItemViewControllerTableViewController: UITableViewController {
 
+    @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +31,10 @@ class AddItemViewControllerTableViewController: UITableViewController {
     }
     
     @IBAction func done() {
+        
+        print("Contents of the text field: \(textField.text!)")
         navigationController?.popViewController(animated: true)
+        
+        
     }
 }
