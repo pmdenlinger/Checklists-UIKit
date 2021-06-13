@@ -15,6 +15,13 @@ class AddItemViewControllerTableViewController: UITableViewController {
         navigationItem.largeTitleDisplayMode = .never
     }
     
+//    MARK: - Table View Delegates
+    
+    override func tableView(_ tableView: UITableView,
+                            willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
+    
 //    MARK: - Actions
     
     @IBAction func cancel() {
