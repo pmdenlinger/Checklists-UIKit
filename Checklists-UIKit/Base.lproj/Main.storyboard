@@ -81,9 +81,10 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oQy-V2-bhZ">
                                                     <rect key="frame" x="16" y="4" width="288" height="34.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done" destination="GEG-HJ-gzP" eventType="editingDidEnd" id="MKp-M9-BDV"/>
+                                                        <outlet property="delegate" destination="GEG-HJ-gzP" id="oTH-e3-P3b"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -109,13 +110,14 @@
                                 <action selector="cancel" destination="GEG-HJ-gzP" id="hGm-TR-Ibe"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Olc-sq-Jhq">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="Olc-sq-Jhq">
                             <connections>
                                 <action selector="done" destination="GEG-HJ-gzP" id="zh4-ei-Kus"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBarButton" destination="Olc-sq-Jhq" id="7ww-wF-yKi"/>
                         <outlet property="textField" destination="oQy-V2-bhZ" id="zc2-h2-cFZ"/>
                     </connections>
                 </tableViewController>
