@@ -48,7 +48,11 @@
                         <barButtonItem title="Item" id="XfF-Pa-dSU"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Checklists" id="aVs-Be-ITb">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ea9-l3-JNK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ea9-l3-JNK">
+                            <connections>
+                                <action selector="addItem" destination="bzA-pN-4w8" id="kzj-Z3-tkb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
