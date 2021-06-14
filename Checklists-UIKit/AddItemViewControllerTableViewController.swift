@@ -31,6 +31,20 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
         textField.becomeFirstResponder()
     }
     
+    //    MARK: - Actions
+        
+        @IBAction func cancel() {
+            delegate?.addItemViewControllerDidCancel(self)
+        }
+        
+        @IBAction func done() {
+            
+            let item = ChecklistItem()
+            item.text = textField.text!
+            
+            delegate?.addItemViewController(self, didFinishAdding: item)
+        }
+    
 //    MARK: - Table View Delegates
     
     override func tableView(_ tableView: UITableView,
@@ -38,27 +52,19 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
         return nil
     }
     
-//    MARK: - Actions
-    
-    @IBAction func cancel() {
-        delegate?.addItemViewControllerDidCancel(self)
-    }
-    
-    @IBAction func done() {
-        
-        let item = ChecklistItem()
-        item.text = textField.text!
-        
-        delegate?.addItemViewController(self, didFinishAdding: item)
-    }
+
 //    MARK: - Text Field Delegates
     
     func textField( _ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let oldText = textField.text!
         let stringRange = Range(range, in: oldText)!
         let newText = oldText.replacingCharacters(in: stringRange, with: string)
-        
         doneBarButton.isEnabled = !newText.isEmpty
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        doneBarButton.isEnabled = false
         return true
     }
 }
